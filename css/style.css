@@ -1,0 +1,56 @@
+:root {
+  --bg-body: #011627;
+  --bg-cell: #011627;
+  --bg-cell-bomb: #ff0000;
+  --bg-cell-clicked: #7fffd4;
+}
+
+body {
+  color: white;
+  background-color: var(--bg-body);
+}
+
+.cells-list {
+  list-style-type: none;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cells-list:has(.cell) {
+  border: 2px solid white;
+}
+
+.cells-list > .cell {
+  width: calc(100% / 8);
+  aspect-ratio: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.cells-list > .cell.cell-100 {
+  width: calc(100% / 10);
+}
+
+.cells-list > .cell.cell-81 {
+  width: calc(100% / 9);
+}
+
+.cells-list > .cell.cell-49 {
+  width: calc(100% / 7);
+}
+
+.cells-list > .cell.cell-clicked {
+  background-color: var(--bg-cell-clicked);
+  color: #333;
+}
+
+.cells-list > .cell.cell-bomb {
+  background-color: var(--bg-cell-bomb);
+}
